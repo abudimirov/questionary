@@ -27,7 +27,7 @@ public class QuestionServiceImpl implements QuestionService{
     @Override
     public Map<Integer, Question> getAllQuestions() throws IOException {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        InputStream inputStream = classloader.getResourceAsStream("questions.csv");
+        InputStream inputStream = classloader.getResourceAsStream(pathToFile);
         if (inputStream != null) {
             InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
             BufferedReader reader = new BufferedReader(streamReader);

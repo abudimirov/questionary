@@ -13,7 +13,7 @@ public class QuestionaryApplication {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/spring-context.xml");
         QuestionService service = context.getBean(QuestionService.class);
         Map<Integer, Question> questionMap = service.getAllQuestions();
-        questionMap.forEach((key, value) -> System.out.println(value.getQuestionBody()));
+        questionMap.forEach((key, value) -> System.out.println("Вопрос: " + value.getQuestionBody() + " Ответ: " + value.getCorrectAnswer()));
     }
 
 }
