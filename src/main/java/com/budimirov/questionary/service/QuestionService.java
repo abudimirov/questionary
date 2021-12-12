@@ -4,8 +4,10 @@ import com.budimirov.questionary.domain.Question;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Scanner;
 
 public interface QuestionService {
-    Question getById(int id);
     Map<Integer, Question> getAllQuestions() throws IOException;
+    boolean askQuestion(Scanner scanner, Question question);
+    boolean checkExam(Scanner scanner);
 }
